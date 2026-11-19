@@ -1,0 +1,183 @@
+/* ===================================
+   SEÇÃO CLIENTES
+=================================== */
+
+.carousel-track img{
+    filter: brightness(0) invert(1);
+    opacity: .7;
+}
+
+.clientes{
+    width: 100%;
+    /* margin-top: 4rem; */
+    overflow: hidden;
+}
+
+.clientes h2{
+    text-align: center;
+    color: white;
+    margin-bottom: 2rem;
+
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+
+    font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
+}
+
+/* ===================================
+   CARROSSEL
+=================================== */
+
+.carousel{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-top: 3rem;
+}
+
+/* Fade esquerdo */
+
+.carousel::before{
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 120px;
+    height: 100%;
+
+    z-index: 2;
+
+    background: linear-gradient(
+        to right,
+        #151515,
+        transparent
+    );
+}
+
+/* Fade direito */
+
+.carousel::after{
+    content: '';
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 120px;
+    height: 100%;
+
+    z-index: 2;
+
+    background: linear-gradient(
+        to left,
+        #151515,
+        transparent
+    );
+}
+
+/* ===================================
+   TRACK
+=================================== */
+
+.carousel-track{
+
+    display: flex;
+    height: 45px;
+    align-items: center;
+    gap: 5rem;
+    width: max-content;
+    animation: marquee 25s linear infinite;
+}
+
+/* Pausa ao passar o mouse */
+
+.carousel:hover .carousel-track{
+    animation-play-state: paused;
+}
+
+/* ===================================
+   LOGOS
+=================================== */
+
+.carousel-track img{
+
+    height: 40px;
+    width: auto;
+
+    flex-shrink: 0;
+
+    opacity: .7;
+
+    transition: .3s ease;
+}
+
+.carousel-track img:hover{
+
+    opacity: 1;
+    cursor: pointer;
+    transform: scale(1.08);
+}
+
+/* ===================================
+   ANIMAÇÃO
+=================================== */
+
+@keyframes marquee{
+
+    from{
+        transform: translateX(0);
+    }
+
+    to{
+        transform: translateX(-50%);
+    }
+
+}
+
+/* ===================================
+   TABLET
+=================================== */
+
+@media (max-width: 768px){
+
+    .carousel-track{
+        gap: 3rem;
+    }
+
+    .carousel-track img{
+        height: 50px;
+    }
+
+    .carousel::before,
+    .carousel::after{
+        width: 60px;
+    }
+
+}
+
+/* ===================================
+   CELULAR
+=================================== */
+
+@media (max-width: 480px){
+
+    .carousel-track{
+        gap: 2rem;
+    }
+
+    .carousel-track img{
+        height: 35px;
+    }
+
+    .carousel::before,
+    .carousel::after{
+        width: 40px;
+    }
+
+}
