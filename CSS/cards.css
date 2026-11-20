@@ -1,6 +1,5 @@
 .cards {
     width: 100%;
-    margin-top: 4rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
@@ -28,7 +27,6 @@
     background-color: rgb(51, 51, 51);
 }
 
-
 .cardsfx h3,
 .cardsfx p{
     transform: translateZ(30px);
@@ -41,3 +39,21 @@
 .cardsfx p {
     opacity: .8;
 }
+
+@media (max-width: 768px) {
+
+    main {
+        width: 90%;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 480px) {
+
+        .cards {
+            grid-template-columns: 1fr;
+        }
+
+    }

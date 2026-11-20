@@ -2,18 +2,18 @@
    SEÇÃO CLIENTES
 =================================== */
 
-.carousel-track img{
+.carousel-track img {
     filter: brightness(0) invert(1);
     opacity: .7;
 }
 
-.clientes{
+.clientes {
     width: 100%;
     /* margin-top: 4rem; */
     overflow: hidden;
 }
 
-.clientes h2{
+.clientes h2 {
     text-align: center;
     color: white;
     margin-bottom: 2rem;
@@ -21,27 +21,27 @@
     font-size: clamp(1.5rem, 3vw, 2.2rem);
 
     font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    sans-serif;
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        sans-serif;
 }
 
 /* ===================================
    CARROSSEL
 =================================== */
 
-.carousel{
+.carousel {
     width: 100%;
     overflow: hidden;
     position: relative;
-    margin-top: 3rem;
+    margin: 3rem 0;
 }
 
 /* Fade esquerdo */
 
-.carousel::before{
+.carousel::before {
     content: '';
 
     position: absolute;
@@ -53,16 +53,14 @@
 
     z-index: 2;
 
-    background: linear-gradient(
-        to right,
-        #151515,
-        transparent
-    );
+    background: linear-gradient(to right,
+            #151515,
+            transparent);
 }
 
 /* Fade direito */
 
-.carousel::after{
+.carousel::after {
     content: '';
 
     position: absolute;
@@ -74,30 +72,27 @@
 
     z-index: 2;
 
-    background: linear-gradient(
-        to left,
-        #151515,
-        transparent
-    );
+    background: linear-gradient(to left,
+            #151515,transparent);
 }
 
 /* ===================================
    TRACK
 =================================== */
 
-.carousel-track{
+.carousel-track {
 
     display: flex;
-    height: 45px;
+    height: 3rem;
     align-items: center;
-    gap: 5rem;
+    gap: 4.5rem;
     width: max-content;
     animation: marquee 80s linear infinite;
 }
 
 /* Pausa ao passar o mouse */
 
-.carousel:hover .carousel-track{
+.carousel:hover .carousel-track {
     animation-play-state: paused;
 }
 
@@ -105,19 +100,16 @@
    LOGOS
 =================================== */
 
-.carousel-track img{
+.carousel-track img {
 
-    height: 40px;
+    height: 2.5rem;
     width: auto;
-
     flex-shrink: 0;
-
     opacity: .7;
-
     transition: .3s ease;
 }
 
-.carousel-track img:hover{
+.carousel-track img:hover {
 
     opacity: 1;
     cursor: pointer;
@@ -128,13 +120,13 @@
    ANIMAÇÃO
 =================================== */
 
-@keyframes marquee{
+@keyframes marquee {
 
-    from{
+    from {
         transform: translateX(0);
     }
 
-    to{
+    to {
         transform: translateX(-50%);
     }
 
@@ -144,18 +136,18 @@
    TABLET
 =================================== */
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
 
-    .carousel-track{
+    .carousel-track {
         gap: 3rem;
     }
 
-    .carousel-track img{
+    .carousel-track img {
         height: 50px;
     }
 
     .carousel::before,
-    .carousel::after{
+    .carousel::after {
         width: 60px;
     }
 
@@ -165,18 +157,18 @@
    CELULAR
 =================================== */
 
-@media (max-width: 480px){
+@media (max-width: 480px) {
 
-    .carousel-track{
+    .carousel-track {
         gap: 2rem;
     }
 
-    .carousel-track img{
+    .carousel-track img {
         height: 35px;
     }
 
     .carousel::before,
-    .carousel::after{
+    .carousel::after {
         width: 40px;
     }
 
